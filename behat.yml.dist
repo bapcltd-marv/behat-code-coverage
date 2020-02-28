@@ -12,19 +12,9 @@ default:
           include:
             directories:
               'src': ~
-      report:
-        format: html
-        options:
-          target: build/coverage-behat-deprecated-report-config
       reports:
-        clover:
-          target: build/coverage-behat/clover.xml
-        crap4j:
-          target: build/coverage-behat/crap4j.xml
-        html:
-          target: build/coverage-behat
         php:
-          target: build/coverage-behat/coverage.php
+          target: build/coverage/behat.cov
         text:
           showColors: true
           showUncoveredFiles: true
