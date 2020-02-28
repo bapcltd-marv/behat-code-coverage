@@ -22,7 +22,6 @@ class ProxyTest extends TestCase
 {
     private $driver;
     private $localDriver;
-    private $remoteDriver;
 
     protected function setUp(): void
     {
@@ -30,22 +29,14 @@ class ProxyTest extends TestCase
 
         $this->localDriver = $this->createMock('DVDoug\Behat\CodeCoverage\Common\Driver\Stub');
 
-        $this->remoteDriver = $this->getMockBuilder('DVDoug\Behat\CodeCoverage\Driver\RemoteXdebug')
-                                   ->disableOriginalConstructor()
-                                   ->getMock();
-
         $this->driver = new Proxy();
         $this->driver->addDriver($this->localDriver);
-        $this->driver->addDriver($this->remoteDriver);
     }
 
     public function testStart(): void
     {
         $this->localDriver->expects($this->once())
                           ->method('start');
-
-        $this->remoteDriver->expects($this->once())
-                           ->method('start');
 
         $this->driver->start();
     }
@@ -63,10 +54,6 @@ class ProxyTest extends TestCase
         $this->localDriver->expects($this->once())
                           ->method('stop')
                           ->willReturn($coverage);
-
-        $this->remoteDriver->expects($this->once())
-                           ->method('stop')
-                           ->willReturn([]);
 
         $coverage = $this->driver->stop();
 

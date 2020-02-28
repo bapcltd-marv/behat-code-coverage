@@ -6,7 +6,6 @@
     <parameters>
         <parameter key="behat.code_coverage.controller.cli.class">DVDoug\Behat\CodeCoverage\Controller\Cli\CodeCoverageController</parameter>
         <parameter key="behat.code_coverage.driver.proxy.class">DVDoug\Behat\CodeCoverage\Driver\Proxy</parameter>
-        <parameter key="behat.code_coverage.driver.remote.class">DVDoug\Behat\CodeCoverage\Driver\RemoteXdebug</parameter>
         <parameter key="behat.code_coverage.listener.event.class">DVDoug\Behat\CodeCoverage\Listener\EventListener</parameter>
         <parameter key="behat.code_coverage.service.report.class">DVDoug\Behat\CodeCoverage\Service\ReportService</parameter>
         <parameter key="behat.code_coverage.service.report_factory.class">DVDoug\Behat\CodeCoverage\Common\Report\Factory</parameter>
@@ -70,12 +69,6 @@
                 method="create"
                 />
             <tag name="behat.code_coverage.driver" alias="local" />
-        </service>
-
-        <service id="behat.code_coverage.driver.remote" class="%behat.code_coverage.driver.remote.class%">
-            <argument>%behat.code_coverage.config%</argument>
-            <argument type="service" id="behat.code_coverage.http_client" />
-            <tag name="behat.code_coverage.driver" alias="remote" />
         </service>
 
         <service id="behat.code_coverage.listener.event" class="%behat.code_coverage.listener.event.class%">
