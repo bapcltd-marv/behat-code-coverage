@@ -171,3 +171,5 @@ pip-log.txt
 
 Vagrantfile
 .vagrant
+
+/.vscode/
