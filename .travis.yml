@@ -25,5 +25,7 @@ install:
 
 script:
   - if [[ "$xdebug" != "yes" ]]; then ./vendor/bin/php-cs-fixer fix --verbose --dry-run --diff --diff-format=udiff --allow-risky=yes; fi
-  - ./vendor/bin/phpunit
-  - ./vendor/bin/behat --strict
+  - if [[ "$xdebug" = "yes" ]]; then ./vendor/bin/phpunit --coverage-php= --coverage-php=./build/coverage/phpunit.cov; else ./vendor/bin/phpunit --no-coverage; fi
+  - if [[ "$xdebug" = "yes" ]]; then ./vendor/bin/behat --strict; else ./vendor/bin/behat --strict --no-coverage; fi
+  - if [[ "$xdebug" = "yes" ]]; then ./vendor/bin/phpcov merge ./build/coverage/ --clover ./build/coverage/coverage.clover; fi
+  - if [[ "$xdebug" = "yes" ]]; then ./vendor/bin/php-coveralls --no-interaction -vvv; fi
