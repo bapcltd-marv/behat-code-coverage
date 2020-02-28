@@ -1,8 +1,8 @@
 {
-    "name": "dvdoug/behat-code-coverage",
+    "name": "bapcltd/behat-code-coverage",
     "description": "Generate Code Coverage reports for Behat tests",
     "type": "library",
-    "homepage": "https://github.com/dvdoug/behat-code-coverage",
+    "homepage": "https://github.com/bapcltd-marv/behat-code-coverage",
     "keywords": [
         "behat", "code", "coverage", "generate", "generation", "build",
         "report", "test", "tests", "code-coverage", "reports", "clover",
@@ -44,8 +44,9 @@
         "ext-xdebug": "Xdebug extension is required to collect coverage via Xdebug driver and run tests",
         "ext-phpdbg": "PHPDBG extension allows you to collect coverage faster than Xdebug"
     },
-    "replace": {
-        "leanphp/behat-code-coverage": "*"
+    "conflict": {
+        "leanphp/behat-code-coverage": "*",
+        "dvdoug/behat-code-coverage": "*"
     },
     "autoload": {
         "psr-4": {
