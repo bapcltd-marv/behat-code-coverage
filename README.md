@@ -1,9 +1,13 @@
+# Forked
+This is a fork of [dvdoug/behat-code-coverage](https://github.com/dvdoug/behat-code-coverage)
+
+* drops the remote xdebug driver to avoid guzzlehttp/guzzle conflicts.
+* drops php < 7.4 because we don't support older versions of PHP unless absolutely necessary.
+* drops scrutinizer + azure pipelines in favour of coveralls + travis
+
 behat-code-coverage
 ===================
-[![Build Status](https://dev.azure.com/dvdoug/behat-code-coverage/_apis/build/status/dvdoug.behat-code-coverage?branchName=master)](https://dev.azure.com/dvdoug/behat-code-coverage/_build/latest?definitionId=1&branchName=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dvdoug/behat-code-coverage/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dvdoug/behat-code-coverage/?branch=master)
-[![Download count](https://img.shields.io/packagist/dt/dvdoug/behat-code-coverage.svg)](https://packagist.org/packages/dvdoug/behat-code-coverage)
-[![Current version](https://img.shields.io/packagist/v/dvdoug/behat-code-coverage.svg)](https://packagist.org/packages/dvdoug/behat-code-coverage)
+[![Build Status](https://travis-ci.com/bapcltd-marv/behat-code-coverage.svg?branch=master)](https://travis-ci.com/bapcltd-marv/behat-code-coverage)
 
 The authors of [Behat][3] pedantically, but correctly, [point out][6] that `.feature` files are not strictly speaking
 tests even though when constructed properly the scenarios described in them should cover both happy and sad paths in an
