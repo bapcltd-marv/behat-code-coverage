@@ -37,7 +37,7 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.13",
         "php-coveralls/php-coveralls": "^2.2",
-        "phpunit/phpcov": "^7.0",
+        "phpunit/phpcov": "^5|^6|^7",
         "phpunit/phpunit": "^7.0||^8.0||^9.0"
     },
     "suggest": {
